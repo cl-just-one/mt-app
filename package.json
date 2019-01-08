@@ -15,18 +15,41 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "cross-env": "^5.2.0",
+    "deepmerge": "^3.0.0",
     "element-ui": "^2.4.6",
     "koa": "^2.5.2",
+    "mime": "^1.6.0",
     "node-sass": "^4.11.0",
     "nuxt": "^2.0.0",
     "sass-loader": "^7.1.0"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0",
-    "nodemon": "^1.11.0"
-  }
+    "koa-redis": "^3.1.3",
+    "koa-router": "^7.4.0",
+    "mime": "^1.6.0",
+    "mongoose": "^5.4.1",
+    "node-sass": "^4.11.0",
+    "nodemailer": "^5.0.0",
+    "nodemon": "^1.11.0",
+    "sass-loader": "^7.1.0"
+  },
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cl-just-one/mt-app.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cl-just-one/mt-app/issues"
+  },
+  "homepage": "https://github.com/cl-just-one/mt-app#readme"
 }

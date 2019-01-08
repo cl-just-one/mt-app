@@ -126,7 +126,8 @@ export default {
     }
   },
   methods: {
-    sendMsg: function () {}
+    sendMsg: function () {},
+    register: function () {}
   }
 }
 </script>
