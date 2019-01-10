@@ -12,7 +12,7 @@ export default {
     get host () {
       return "smtp.qq.com"
     },
-    get port () {
+    get user () {
       return "837460387@qq.com"
     },
     get pass () {

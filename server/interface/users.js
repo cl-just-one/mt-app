@@ -121,9 +121,12 @@ router.post('/verify', async (ctx, next) => {
   }
   let transporter = nodeMailer.createTransport({
     host: Email.smtp.host,
-    // port: 587,
-    // secure: false,
-    service: 'qq',
+    port: 587,
+    secure: false,
+    // secureConnection: true,
+    // port: 465,
+    // service: 'qq',
+    // secure: true,
     auth: {
       user: Email.smtp.user,
       pass: Email.smtp.pass

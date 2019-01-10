@@ -76,6 +76,7 @@
 </template>
 
 <script>
+import CryptoJS from 'crypto-js'
 export default {
   layout: 'blank',
   data: () => {
@@ -115,12 +116,13 @@ export default {
           validator: (rule, value, callback) => {
             if (value === '') {
               callback(new Error('请输入密码'))
-            } else if (value === this.ruleForm.pwd) {
+            } else if (value !== "123") {
               callback(new Error('两次输入密码不对'))
             } else {
               callback()
             }
-          }
+          },
+          trigger: 'blur'
         }]
       }
     }
@@ -166,7 +168,32 @@ export default {
         })
       }
     },
-    register: function () {}
+    register: function () {
+      let self = this;
+      this.$refs['ruleForm'].validate((valid) => {
+        if (valid) {
+          self.$axios.post('/users/signup', {
+            username: window.encodeURIComponent(self.ruleForm.name),
+            password: CryptoJS.MD5(self.ruleForm.pwd).toString(),
+            email: self.ruleForm.email,
+            code: self.ruleForm.code
+          }).then(({status, data}) => {
+            if (status == 200) {
+              if (data && data.code == 0) {
+                location.href = '/login'
+              } else {
+                self.error = data.msg
+              }
+            } else {
+              self.error = `服务器出错，错误码${status}`
+            }
+            setTimeout(function () {
+              self.error = ''
+            }, 1500)
+          })
+        }
+      })
+    }
   }
 }
 </script>
