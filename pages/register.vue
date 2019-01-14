@@ -116,7 +116,7 @@ export default {
           validator: (rule, value, callback) => {
             if (value === '') {
               callback(new Error('请输入密码'))
-            } else if (value !== "123") {
+            } else if (value !== this.ruleForm.pwd) {
               callback(new Error('两次输入密码不对'))
             } else {
               callback()
